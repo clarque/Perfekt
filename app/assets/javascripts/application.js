@@ -11,5 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+//= require jquery-ui-1.8.20.custom.min.js
+//= require jquery-ui-timepicker-addon.js
+//= require bootstrap.min

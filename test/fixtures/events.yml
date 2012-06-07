@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  occurs_at: 2012-05-29 20:42:43
+  start_time: MyString
+  end_time: MyString
+  arrival_time: MyString
+  invited_count: 1
+  attended_count: 1
+  crew_count: 1
+  volunteer_count: 1
+  valet: false
+
+two:
+  title: MyString
+  occurs_at: 2012-05-29 20:42:43
+  start_time: MyString
+  end_time: MyString
+  arrival_time: MyString
+  invited_count: 1
+  attended_count: 1
+  crew_count: 1
+  volunteer_count: 1
+  valet: false

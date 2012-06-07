@@ -1,0 +1,89 @@
+<%= form_for(@event,:html => { :class => "form-horizontal"} ) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+  <div class="control-group field">
+    <%= f.label :title, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :occurs_at, :class => "control-label" %>
+    <div class="controls">
+      <%= f.datepicker :occurs_at, :value => (@event.occurs_at || Date.today).strftime('%m/%d/%Y') %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :start_time, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :start_time %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :end_time, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :end_time %>
+    </div>
+  </div>
+
+ <div class="control-group field">
+    <%= f.label :arrival_time, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :arrival_time %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :invited_count, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :invited_count %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :attended_count, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :attended_count %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :crew_count, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :crew_count %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :volunteer_count, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :volunteer_count %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :valet, :class => "control-label" %>
+    <div class="controls">
+      <%= f.check_box :valet %>
+    </div>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-primary" %> <%= link_to 'Back', events_path,:class => "btn" %>
+  </div>
+<% end %>
