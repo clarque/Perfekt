@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  *= require bootstrap.min
- *= require jquery-ui-1.8.20.custom.
+ *= require jquery-ui-1.8.20.custom
  */
 
 .underlined {border-bottom: 1px solid #eee;}
