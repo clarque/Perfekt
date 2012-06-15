@@ -62,8 +62,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 puts @event.to_yaml
 puts params[:event]
-    normalize_dates params[:event]
-puts params[:event]
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
