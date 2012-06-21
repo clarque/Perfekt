@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530034243) do
+ActiveRecord::Schema.define(:version => 20120621051645) do
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.string   "country_code"
+    t.string   "home_phone"
+    t.string   "work_phone"
+    t.string   "mobile_phone"
+    t.string   "email_address"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -24,8 +39,18 @@ ActiveRecord::Schema.define(:version => 20120530034243) do
     t.integer  "crew_count"
     t.integer  "volunteer_count"
     t.boolean  "valet"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "client_id"
+    t.string   "client_name"
+    t.string   "client_address"
+    t.string   "client_city"
+    t.string   "client_state"
+    t.string   "client_zip"
+    t.string   "client_home_phone"
+    t.string   "client_work_phone"
+    t.string   "client_mobile_phone"
+    t.string   "client_email"
   end
 
 end

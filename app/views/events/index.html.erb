@@ -1,9 +1,10 @@
 <br />
-<h1>Listing events</h1>
+<h1>Event List</h1>
 <br /><br />
 
 <table class="table table-striped">
   <tr>
+    <th>Client</th>
     <th>Title</th>
     <th>Occurs at</th>
     <th></th>
@@ -13,6 +14,7 @@
 
 <% @events.each do |event| %>
   <tr>
+    <td><%= event.client_name %></td>
     <td><%= event.title %></td>
     <td><%= event.occurs_at.strftime("%e %b %Y") %></td>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

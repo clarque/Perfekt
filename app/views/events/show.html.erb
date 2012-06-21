@@ -1,24 +1,40 @@
-<p id="notice"><%= notice %></p>
+
+<% if notice.present? %>
+  <div class="alert alert-success">
+    <a class="close" data-dismiss="alert">&#215;</a>
+    <%= notice %>
+  </div>
+<% end %>
 
 <h1><%= @event.title %></h1>
 <br />
 <br />
 <div class="row underlined">
-  <div class="span6"><h5 class="muted">Client</h5> <%= "Paul Duffy and Ken Patton (TBD)" %></div>
-  <div class="span2"><h5 class="muted">Arrival Time</h5> <%= time_range(@event.arrival_time) %></div>
-  <div class="span1"><h5 class="muted">Valet</h5> <%= yes_no(@event.valet) %></div>
+  <div class="span5"><h5 class="muted">Client Name</h5> <%= @event.client_name %></div>
+  <div class="span4"><h5 class="muted">Address</h5> <%= address(@event) %></div>
+</div>
+
+<div class="row underlined">
+  <div class="span6"><h5 class="muted">Phone</h5> <%= phones(@event) %></div>
+  <div class="span3"><h5 class="muted">Email</h5> <%= @event.client_email %></div>
+</div>
+
+<div class="row ">
+  <div class="span9"><br /><h4 class="muted">Event Details</h4></div>
 </div>
 
 
 <div class="row underlined">
-  <div class="span3"><h5 class="muted">Day</h5> <%= @event.occurs_at.strftime("%A") %></div>
+  <div class="span2"><h5 class="muted">Day</h5> <%= @event.occurs_at.strftime("%A") %></div>
   <div class="span3"><h5 class="muted">Date</h5> <%= @event.occurs_at.strftime("%B %d, %Y") %></div>
-  <div class="span3"><h5 class="muted">Time</h5> <%= time_range(@event.start_time, @event.end_time) %></div>
+  <div class="span2"><h5 class="muted">Arrival Time</h5> <%= time_range(@event.arrival_time) %></div>
+  <div class="span2"><h5 class="muted">Time</h5> <%= time_range(@event.start_time, @event.end_time) %></div>
 </div>
 <div class="row underlined">
   <div class="span3"><h5 class="muted">Dinner Room</h5> <%= "TBD" %></div>
   <div class="span3"><h5 class="muted">Cocktail Room</h5> <%= "TBD" %></div>
-  <div class="span3"><h5 class="muted">Function</h5> <%= "TBD" %></div>
+  <div class="span1"><h5 class="muted">Function</h5> <%= "TBD" %></div>
+  <div class="span1"><h5 class="muted">Valet</h5> <%= yes_no(@event.valet) %></div>
 </div>
 <div class="row">
   <div class="span2"><h5 class="muted">Guests</h5> <%= @event.invited_count %></div>

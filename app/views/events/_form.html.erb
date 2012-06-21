@@ -1,6 +1,5 @@
-<%= form_for(@event,:html => { :class => "form-horizontal"} ) do |f| %>
   <% if @event.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-error">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
@@ -11,13 +10,81 @@
     </div>
   <% end %>
 
+
+<%= form_for(@event,:html => { :class => "form-horizontal"} ) do |f| %>
+
 <fieldset>
+  <div class="control-group field">
+    <%= f.label :client_name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_name %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_address, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_address %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_city, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_city %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_state, :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :client_state, ([[['', '']]] << (us_states)).flatten(1) %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_zip, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_zip %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_home_phone, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_home_phone %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_work_phone, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_work_phone %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_mobile_phone, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_mobile_phone %>
+    </div>
+  </div>
+
+  <div class="control-group field">
+    <%= f.label :client_email, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :client_email %>
+    </div>
+  </div>
+
   <div class="control-group field">
     <%= f.label :title, :class => "control-label" %>
     <div class="controls">
       <%= f.text_field :title %>
     </div>
   </div>
+
+
 
   <div class="control-group field">
     <%= f.label :occurs_at, :class => "control-label" %>

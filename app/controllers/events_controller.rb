@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    flash[:notice] = notice if notice.present?
     @total_eating = @event.attended_count.present? ? @event.attended_count : 0
     @total_eating = @total_eating + @event.crew_count if @event.crew_count.present?
     @total_eating = @total_eating + @event.volunteer_count if @event.volunteer_count.present?
@@ -60,8 +61,7 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
-puts @event.to_yaml
-puts params[:event]
+
 
     respond_to do |format|
       if @event.update_attributes(params[:event])

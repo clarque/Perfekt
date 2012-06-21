@@ -1,4 +1,6 @@
 Perfekt::Application.routes.draw do
+  resources :clients
+
   resources :events
 
   # The priority is based upon order of creation:

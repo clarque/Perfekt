@@ -31,9 +31,13 @@ div {
   color: green; }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
+  color: #c00;
+  font-weight:bold;
+}
+
+.field_with_errors label {
+  font-weight:bold;
+ }
 
 #error_explanation {
   width: 450px;
